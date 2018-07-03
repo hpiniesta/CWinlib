@@ -8,4 +8,7 @@ namespace CWINLIB
 	*/
 	bool getSystemOSVersion(OSVERSIONINFOEX &os);
 
+	bool fileExist(const wstring &fileName);
+
+	bool directoryExist(const wstring &dirPath);
 };

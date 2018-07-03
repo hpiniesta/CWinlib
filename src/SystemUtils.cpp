@@ -29,4 +29,17 @@ namespace CWINLIB
 		}
 		return false;
 	}
+
+	bool fileExist(const wstring &fileName)
+	{
+		DWORD dRet = GetFileAttributes(fileName.c_str());
+		return ((INVALID_FILE_ATTRIBUTES != dRet) && !(dRet & FILE_ATTRIBUTE_DIRECTORY));
+	}
+
+	bool directoryExist(const wstring &dirPath)
+	{
+		DWORD dRet = GetFileAttributes(dirPath.c_str());
+		return ((INVALID_FILE_ATTRIBUTES != dRet) && (dRet & FILE_ATTRIBUTE_DIRECTORY));
+	}
+
 };
